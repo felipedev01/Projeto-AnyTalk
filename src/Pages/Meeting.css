@@ -13,9 +13,9 @@
   flex: 1; /* Ocupa o restante do espaço */
   display: flex;
   height: 100%; /* Define a altura como 100% */
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
 }
-
+git add src/pages/Meeting.css
 #jitsi-container {
   width: 100%;
   height: 90vh !important;
