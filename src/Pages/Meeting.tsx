@@ -26,6 +26,7 @@ const Meeting = () => {
       },
       configOverwrite: {
         disableThirdPartyRequests: true,
+        enableUserRolesBasedOnToken: false,
       },
       interfaceConfigOverwrite: {
         SHOW_JITSI_WATERMARK: false,

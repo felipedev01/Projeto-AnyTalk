@@ -1,10 +1,8 @@
-/* src/components/Header.css */
-
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background-color: #3F5471;
+  justify-content: space-between;
+  background-color: #3f5471;
   padding: 10px 20px;
   width: 100%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -25,20 +23,24 @@
   align-items: center;
 }
 
-.icons-container {
+.auth-links {
   display: flex;
-  gap: 17px;
-  align-items: center;
+  gap: 20px;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.icons-container li {
-  margin: 0 10px;
+.auth-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.icon {
-  height: 30px;
+.auth-link:hover {
+  background-color: #0077ff;
+  color: #fff;
 }
-

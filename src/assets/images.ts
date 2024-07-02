@@ -5,6 +5,8 @@ import icon1 from './images/Vector.svg';
 import icon2 from './images/Vector (2).svg';
 import icon3 from './images/Vector (3).svg';
 import icon4 from './images/Vector (1).svg';
+import icon5 from './images/logo.webp';
+import icon6 from './images/anytalk.png'
 
 export default {
   logo,
@@ -13,5 +15,6 @@ export default {
   icon2,
   icon3,
   icon4,
-  
+  icon5,
+  icon6
 };

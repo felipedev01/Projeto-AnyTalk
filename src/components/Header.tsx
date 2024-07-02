@@ -1,7 +1,6 @@
-// src/components/Header.tsx
 import React from 'react';
 import './Header.css';
-import images from '../assets/images'; // Importando o objeto de imagens
+import images from '../assets/images';
 
 const Header = () => {
   return (
@@ -10,12 +9,9 @@ const Header = () => {
         <img src={images.logo} alt="AnyTalk Logo" className="logo" />
       </div>
       <nav className="navigation">
-        <ul className="icons-container">
-          <li><img src={images.icon1} alt="Icon 1" className="icon" /></li>
-          <li><img src={images.icon2} alt="Icon 2" className="icon" /></li>
-          <li><img src={images.icon3} alt="Icon 3" className="icon" /></li>
-          <li><img src={images.icon4} alt="Icon 3" className="icon" /></li>
-          
+        <ul className="auth-links">
+          <li><a href="/login" className="auth-link">Entrar</a></li>
+          <li><a href="/register" className="auth-link">Registrar</a></li>
         </ul>
       </nav>
     </header>
@@ -23,5 +19,6 @@ const Header = () => {
 };
 
 export default Header;
+
 
 

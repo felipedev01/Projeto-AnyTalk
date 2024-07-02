@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Header from '../components/Header';
+import './Dashboard.css';
 import images from '../assets/images';
-import './Home.css';
 
-const Home = () => {
+const Dashboard: React.FC = () => {
   const [name, setName] = useState('');
+  const greetingName = localStorage.getItem('userName')
+  console.log(greetingName)
   const [room, setRoom] = useState('');
   const navigate = useNavigate();
 
@@ -16,11 +17,15 @@ const Home = () => {
   };
 
   return (
-    <div className="home-page">
-      <Header />
+    <div className="dashboard">
+      <header className="dashboard-header">
+        <div className="logo-container">
+          <img src={images.logo} alt="AnyTalk Logo" className="logo" />
+        </div>
+      </header>
       <div className="home-container">
         <div className="form-container">
-          <h2>Bem-vindo ao AnyTalk</h2>
+          <h2>Bem-vindo, {greetingName}!</h2>
           <input
             type="text"
             placeholder="Insira seu nome"
@@ -44,6 +49,5 @@ const Home = () => {
   );
 };
 
-export default Home;
-
+export default Dashboard;
 
