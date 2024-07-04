@@ -13,7 +13,7 @@ const Register: React.FC = () => {
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     try {
-      const response = await api.post('/users/register', { name, email, password });
+      const response = await api.post('/register', { name, email, password });
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('userName', name);
       navigate('/dashboard');
