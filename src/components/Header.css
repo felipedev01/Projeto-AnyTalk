@@ -14,10 +14,15 @@
 }
 
 .logo {
-  height: 40px;
+  /*height: 40px;*/
   margin-right: 10px;
 }
-
+@media (max-width: 768px) {
+  .logo {
+    height: 33px !Important;
+    margin-right: 5px;
+  }
+}
 .navigation {
   display: flex;
   align-items: center;
@@ -25,7 +30,6 @@
 
 .auth-links {
   display: flex;
-  gap: 20px;
   list-style: none;
   padding: 0;
   margin: 0;

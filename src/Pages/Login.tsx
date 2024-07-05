@@ -2,15 +2,18 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import api from '../api';
 import images from '../assets/images';
+import Spinner from '../components/Spinner';
 import './Login.css';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
+    setLoading(true);
     try {
       const response = await api.post('/login', { email, password });
       localStorage.setItem('token', response.data.token);
@@ -18,11 +21,14 @@ const Login: React.FC = () => {
       navigate('/dashboard');
     } catch (error) {
       console.error('Login failed:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <div className="login-container">
+      {loading && <Spinner/>}
       <div className="login-image">
         <img src={images.logo2} alt="Dimension Four Logo" />
       </div>

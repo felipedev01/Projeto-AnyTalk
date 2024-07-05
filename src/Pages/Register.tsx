@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../api';
-import images from '../assets/images';
+import Spinner from '../components/Spinner';
 import './Register.css';
 
 const Register: React.FC = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState<boolean>(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
+    setLoading(true);
     try {
       const response = await api.post('/register', { name, email, password });
       localStorage.setItem('token', response.data.token);
@@ -19,13 +21,15 @@ const Register: React.FC = () => {
       navigate('/dashboard');
     } catch (error) {
       console.error('Registration failed:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <div className="register-container">
+      {loading && <Spinner/>}
       <div className="register-image">
-        <img src={images.logo2} alt="Dimension Four Logo" />
       </div>
       <div className="register-form">
         <h2>Registrar</h2>

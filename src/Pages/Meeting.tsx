@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import './Meeting.css';
-import Header from '../components/Header';
 
 declare global {
   interface Window {
@@ -49,7 +48,6 @@ const Meeting = () => {
 
   return (
     <div className="meeting-page">
-      <Header />
       <div className="meeting-container">
         <div ref={jitsiContainerRef} id="jitsi-container" />
       </div>
